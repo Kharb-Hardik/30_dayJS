@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="p1">Below is a list</p>
+    <div id="d1" class="div1">
+      <ul id="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+      </ul>
+      <p class="changed" style="border: 2 px solid blue;">text content will change here</p>
+      <button id="btn1">change</button>
+    </div>
+    <img src="C:\Users\hardi\OneDrive\Wallpapers\w22.jpg" alt="" id="im">
+    <script>
+      // Task 1: Select an HTML element by its ID and change its text content
+      const p1 = document.getElementById("p1");
+      p1.textContent = "unordered list";
+
+      // Task 2: Select an HTML element by its class and change its background color
+      p1.style.backgroundColor = "red";
+
+      // Task 3: Create a new div element with some text content and append it to the body
+      let div1 = document.getElementById("d1");
+      const inner = div1.innerHTML;
+      let div2 = document.createElement("div");
+      div1.innerHTML = "";
+      div1.appendChild(div2);
+      div2.innerHTML = inner;
+
+      // Task 4: Create a new li element and add it to an existing ul list
+      let ul = document.getElementById("list");
+      let li1 = document.createElement("li");
+      li1.innerText = "4";
+      ul.appendChild(li1);
+
+      // Task 5: Select an HTML element and remove it from the DOM
+      p1.remove();
+
+      // Task 6: Remove the last child of a specific HTML element
+      ul.removeChild(ul.lastElementChild);
+
+    //   Task 7: Select an HTML element and change one of its attributes (e.g., src of an img tag)
+      const img = document.querySelector("img"); // Assuming there's an img element
+        img.src = "https://images.pexels.com/photos/1370725/pexels-photo-1370725.jpeg?auto=compress&cs=tinysrgb&w=600";
+
+      // Task 8: Add and remove a CSS class to/from an HTML element
+        div1.classList.add("super");
+        div1.classList.remove("super");
+
+
+      // Task 9: Add a click event listener to a button that changes the text content of a paragraph
+      const btn = document.querySelector("#btn1");
+      const par = document.querySelector(".changed");
+      btn.addEventListener("click", () => {
+        par.textContent = "Button was clicked!";
+      });
+
+      // Task 10: Add a mouseover event listener to an element that changes its border color
+      par.addEventListener("mouseover", () => {
+        par.style.border = "2px solid red";
+      });
+
+    </script>
+  </body>
+</html>
